@@ -1,29 +1,34 @@
 # Learn Playwright Fundamental Basics
 
-This repository is a hands-on Playwright learning workspace focused on browser automation fundamentals. It contains categorized test examples that progressively cover base concepts, locator usage, assertions, browser context handling, hooks, fixtures, and advanced framework patterns.
+This repository is a hands-on Playwright learning workspace that covers browser automation fundamentals through structured, topic-based test examples. The exercises progressively move from basic test execution and annotations to locators, browser contexts, assertions, hooks, fixtures, page objects, and advanced automation patterns.
 
-## Project Structure
+## What is included
 
-- `tests/` contains Playwright spec files grouped by topic and learning stage.
-- `playwright.config.ts` configures the test runner, reporter, browser settings, and default screenshot/trace settings.
-- `package.json` lists the project dependencies.
-- `playwright-report/` stores the generated HTML report for completed test runs.
-- `test-results/` stores run-time artifacts such as traces, screenshots, and videos.
+- `tests/` contains Playwright spec files grouped by learning topic.
+- `playwright.config.ts` defines the Playwright configuration, reporters, and browser settings.
+- `package.json` contains the project dependencies and runtime metadata.
+- `playwright-report/` stores HTML test reports generated during execution.
+- `test-results/` stores visual and trace artifacts from test runs.
 
-## Learning Modules
+## Learning modules
 
-The repo includes examples for:
+The workspace currently includes examples for:
 
-- Basics and annotations
+- Basics and test annotations
 - First test execution and browser context concepts
 - Locators and commands
-- Session storage and browser state behavior
-- Alerts, SVG, Shadow DOM, file upload/download
-- Tables, frames/iframes, keyboard and drag/drop interactions
+- Session storage and browser state handling
+- Alerts, SVG, Shadow DOM, file upload, and download flows
+- Tables, frames and iframes, keyboard interactions, and drag-and-drop
 - Assertions, hooks, fixtures, and data-driven testing
-- Page Object Model and advanced framework topics
+- Page Object Model and advanced framework concepts
 
-## Getting Started
+## Prerequisites
+
+- Node.js 18+ recommended
+- npm
+
+## Getting started
 
 1. Install dependencies:
 
@@ -31,13 +36,13 @@ The repo includes examples for:
    npm install
    ```
 
-2. Install the required browsers once if needed:
+2. Install Playwright browsers if they are not already available:
 
    ```bash
    npx playwright install
    ```
 
-3. Run the full suite:
+3. Run the full test suite:
 
    ```bash
    npx playwright test
@@ -49,14 +54,15 @@ The repo includes examples for:
    npx playwright test --project=chromium
    ```
 
-5. Open the HTML report after a test run:
+5. Open the generated test report:
 
    ```bash
    npx playwright show-report
    ```
 
-## Notes
+## Useful notes
 
-- The project is currently configured for the Chromium desktop project in `playwright.config.ts`.
-- HTML reports are generated through the built-in Playwright reporter.
-- Trace, screenshot, and video capture are enabled to support debugging and learning exercises.
+- The default project is configured for Chromium desktop execution in `playwright.config.ts`.
+- HTML reports are generated using Playwright's built-in reporter.
+- Trace, screenshot, and video capture are enabled to aid debugging and learning exercises.
+- New test examples are organized in the `tests/` hierarchy by topic to keep the learning path easy to follow.
