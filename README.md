@@ -1,31 +1,30 @@
 # Learn Playwright Fundamental Basics
 
-This repository is a hands-on Playwright learning workspace that covers browser automation fundamentals through structured, topic-based test examples. The exercises progressively move from basic test execution and annotations to locators, browser contexts, assertions, hooks, fixtures, page objects, and advanced automation patterns.
+This repository is a Playwright learning workspace built for hands-on practice with browser automation, test organization, assertions, and reporting. It contains topic-based spec files that progressively move from basic execution to advanced automation workflows.
 
-## What is included
+## Overview
 
-- `tests/` contains Playwright spec files grouped by learning topic.
-- `playwright.config.ts` defines the Playwright configuration, reporters, and browser settings.
-- `package.json` contains the project dependencies and runtime metadata.
-- `playwright-report/` stores HTML test reports generated during execution.
-- `test-results/` stores visual and trace artifacts from test runs.
+The project demonstrates:
 
-## Learning modules
+- Playwright test setup and browser configuration
+- Test annotations and execution patterns
+- Locators, commands, and browser interactions
+- Session storage reuse for authenticated flows
+- Assertions, hooks, fixtures, and page-object-style patterns
+- Custom reporter integration and Allure reporting support
 
-The workspace currently includes examples for:
+## Repository structure
 
-- Basics and test annotations
-- First test execution and browser context concepts
-- Locators and commands
-- Session storage and browser state handling
-- Alerts, SVG, Shadow DOM, file upload, and download flows
-- Tables, frames and iframes, keyboard interactions, and drag-and-drop
-- Assertions, hooks, fixtures, and data-driven testing
-- Page Object Model and advanced framework concepts
+- `tests/` contains the learning examples grouped by topic
+- `playwright.config.ts` contains Playwright runtime settings and reporter configuration
+- `package.json` lists the project dependencies
+- `Utlis/CustomReporter.ts` provides a custom test reporter hook for the suite
+- `playwright-report/` stores Playwright HTML reports
+- `test-results/` stores screenshots, traces, and videos generated during runs
 
 ## Prerequisites
 
-- Node.js 18+ recommended
+- Node.js 18+
 - npm
 
 ## Getting started
@@ -36,7 +35,7 @@ The workspace currently includes examples for:
    npm install
    ```
 
-2. Install Playwright browsers if they are not already available:
+2. Install the Playwright browsers:
 
    ```bash
    npx playwright install
@@ -48,21 +47,38 @@ The workspace currently includes examples for:
    npx playwright test
    ```
 
-4. Run a specific browser project:
+4. Run a single browser project:
 
    ```bash
    npx playwright test --project=chromium
    ```
 
-5. Open the generated test report:
+5. Open the Playwright HTML report:
 
    ```bash
    npx playwright show-report
    ```
 
-## Useful notes
+## Reporting setup
+
+This workspace is configured to use a line reporter together with a custom reporter implementation. It also supports Allure reporting through the `allure-playwright` package.
+
+### Example commands
+
+```bash
+npx playwright test --reporter=line,allure-playwright
+```
+
+To generate the Allure report locally:
+
+```bash
+npx allure generate ./allure-results --clean -o ./allure-report
+npx allure open ./allure-report
+```
+
+## Notes
 
 - The default project is configured for Chromium desktop execution in `playwright.config.ts`.
-- HTML reports are generated using Playwright's built-in reporter.
-- Trace, screenshot, and video capture are enabled to aid debugging and learning exercises.
-- New test examples are organized in the `tests/` hierarchy by topic to keep the learning path easy to follow.
+- Trace, screenshot, and video capture remain enabled to assist debugging and learning.
+- The test suite is organized by topic, making it easy to follow a step-by-step Playwright learning path.
+- Some examples use saved browser session state (`storageState`) to demonstrate login reuse and faster test flows.
