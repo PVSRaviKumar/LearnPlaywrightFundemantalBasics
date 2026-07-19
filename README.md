@@ -9,7 +9,8 @@ The project demonstrates:
 - Playwright test setup and browser configuration
 - Test annotations and execution patterns
 - Locators, commands, and browser interactions
-- Multiple-element and dynamic web table handling
+- Multiple-element and dynamic web table handling, including pagination and filtering
+- XPath-based table navigation and data extraction workflows
 - Session storage reuse for authenticated flows
 - Assertions, hooks, fixtures, and page-object-style patterns
 - Custom reporter integration and Allure reporting support
@@ -17,6 +18,7 @@ The project demonstrates:
 ## Repository structure
 
 - `tests/` contains the learning examples grouped by topic
+- `tests/07_WebTables/` includes exercises for static data tables, filters, pagination, and XPath-driven table traversal
 - `playwright.config.ts` contains Playwright runtime settings and reporter configuration
 - `package.json` lists the project dependencies
 - `Utils/CustomReporter.ts` provides the custom reporter implementation used by the suite
