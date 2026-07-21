@@ -1,6 +1,6 @@
 # Learn Playwright Fundamental Basics
 
-This repository is a hands-on Playwright learning workspace for practicing browser automation, locator strategies, assertions, frame handling, file operations, and reporting. The test suite is organized by topic so it can be used as a step-by-step reference for beginners and intermediate learners.
+This repository is a hands-on Playwright learning workspace for practicing browser automation, locator strategies, assertions, frame handling, file operations, and reporting. It is organized by topic so it can be used as a step-by-step reference for beginners and intermediate learners.
 
 ## What this project covers
 
@@ -14,11 +14,12 @@ The examples in this workspace demonstrate:
 - Keyboard, hover, drag-and-drop, file upload, and file download flows
 - Session storage reuse for authenticated scenarios
 - Fixtures, hooks, and page-object-style patterns
-- Custom reporting and Allure reporting support
+- Custom HTML reporting and Allure reporting support
 
 ## Repository structure
 
 - tests/ contains topic-based Playwright specs grouped by learning area
+- tests/01_Basics/ to tests/23_Advance_Framework/ include practice exercises for each module
 - tests/07_WebTables/ includes table-related practice examples
 - tests/08_Web_Select_Frames_Iframe/ includes select, dropdown, and frame-based examples
 - playwright.config.ts contains the Playwright runtime and reporter setup
@@ -91,3 +92,4 @@ npx allure open ./allure-report
 - The default configuration targets Chromium desktop execution in playwright.config.ts
 - Trace, screenshot, and video capture remain enabled for debugging and learning
 - Some examples use saved browser session state to demonstrate login reuse and faster test flows
+- The workspace includes both custom HTML reporting and Allure-based reporting examples for comparison
