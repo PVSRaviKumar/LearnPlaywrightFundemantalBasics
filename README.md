@@ -15,13 +15,15 @@ The examples in this workspace demonstrate:
 - Session storage reuse for authenticated scenarios
 - Fixtures, hooks, and page-object-style patterns
 - Custom HTML reporting and Allure reporting support
+- Recent practice modules covering iframe and frame-set handling, keyboard interactions, JavaScript alerts, and SVG element automation
 
 ## Repository structure
 
 - tests/ contains topic-based Playwright specs grouped by learning area
 - tests/01_Basics/ to tests/23_Advance_Framework/ include practice exercises for each module
 - tests/07_WebTables/ includes table-related practice examples
-- tests/08_Web_Select_Frames_Iframe/ includes select, dropdown, and frame-based examples
+- tests/08_Web_Select_Frames_Iframe/ and tests/09_Frame_Iframe/ include select, dropdown, and frame-based examples
+- tests/10_Keyboard_Hover_Drag_Drop/, tests/11_JS_Alerts/, and tests/12_Handle_SVG/ cover advanced UI interaction scenarios
 - playwright.config.ts contains the Playwright runtime and reporter setup
 - package.json lists the project dependencies
 - Utils/CustomReporter.ts provides the custom HTML reporter implementation
