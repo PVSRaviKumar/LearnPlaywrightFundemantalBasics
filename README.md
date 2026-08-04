@@ -15,20 +15,22 @@ The examples in this workspace demonstrate:
 - Session storage reuse for authenticated scenarios
 - Fixtures, hooks, and page-object-style patterns
 - Custom HTML reporting and Allure reporting support
-- Recent practice modules covering iframe and frame-set handling, keyboard interactions, JavaScript alerts, and SVG element automation
+- Recent practice modules for iframe and frame-set handling, keyboard interactions, JavaScript alerts, SVG automation, and test hook priorities
 
 ## Repository structure
 
 - tests/ contains topic-based Playwright specs grouped by learning area
-- tests/01_Basics/ to tests/23_Advance_Framework/ include practice exercises for each module
-- tests/07_WebTables/ includes table-related practice examples
-- tests/08_Web_Select_Frames_Iframe/ and tests/09_Frame_Iframe/ include select, dropdown, and frame-based examples
-- tests/10_Keyboard_Hover_Drag_Drop/, tests/11_JS_Alerts/, and tests/12_Handle_SVG/ cover advanced UI interaction scenarios
+- tests/01_Basics/ through tests/23_Advance_Framework/ contain practice exercises for each module
+- tests/07_WebTables/ includes table-related examples
+- tests/08_Web_Select_Frames_Iframe/ and tests/09_Frame_Iframe/ cover select, dropdown, and frame-based scenarios
+- tests/10_Keyboard_Hover_Drag_Drop/, tests/11_JS_Alerts/, and tests/12_Handle_SVG/ cover advanced UI interactions
+- tests/13_Shadow_DOM/, tests/14_FileUpload/, tests/15_File_Download/, and tests/16_Scroll_toElement/ cover browser automation edge cases
+- tests/17_Expect_Assertions/, tests/18_Test_hooks/, tests/19_Data_Driven_Testing/, tests/20_Page_Object_Model/, tests/21_Fixture/, and tests/22_Misc_Concepts/ demonstrate core testing patterns
 - playwright.config.ts contains the Playwright runtime and reporter setup
-- package.json lists the project dependencies
+- package.json lists project dependencies
 - Utils/CustomReporter.ts provides the custom HTML reporter implementation
 - playwright-report/ stores Playwright HTML reports
-- tta-report/ stores the custom reporting output
+- tta-report/ stores custom reporting output
 - test-results/ stores screenshots, traces, and videos from executed tests
 
 ## Prerequisites
@@ -73,7 +75,7 @@ The examples in this workspace demonstrate:
 Run a single spec file:
 
 ```bash
-npx playwright test tests/08_Web_Select_Frames_Iframe/Task_SpiceJet.spec.ts
+npx playwright test tests/18_Test_hooks/292_TestPriority.spec.ts
 ```
 
 Run the suite with the line reporter and Allure:
