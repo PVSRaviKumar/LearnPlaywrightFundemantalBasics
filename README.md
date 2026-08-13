@@ -31,6 +31,7 @@ The examples in this workspace demonstrate:
 - tests/17_Expect_Assertions/, tests/18_Test_hooks/, tests/19_Data_Driven_Testing/, tests/20_Page_Object_Model/, tests/21_Fixture/, and tests/22_Misc_Concepts/ demonstrate core testing patterns
 - tests/19_Data_Driven_Testing/ includes JSON, CSV, YAML, Faker, and Excel-driven scenarios
 - tests/20_Page_Object_Model/ includes reusable login and inventory page objects to demonstrate maintainable test design
+- Learnings/ contains short reference notes and design decisions captured during the learning journey
 - playwright.config.ts contains the Playwright runtime and reporter setup
 - package.json lists project dependencies and scripts
 - Utils/CustomReporter.ts provides the custom HTML reporter implementation
@@ -46,6 +47,17 @@ This repository is currently being expanded with practical automation examples f
 - Page Object Model implementation for login and e-commerce workflows
 - Reusable test data management and structured test organization
 - Better reporting and debugging output for learning-oriented automation projects
+
+## Latest learning note
+
+A recent note in the Learnings folder documents the key decision for Playwright data-driven testing when the source is asynchronous, such as MySQL or Excel files loaded through `exceljs`:
+
+- Synchronous sources such as JSON, CSV, and YAML can be read at module load time and expanded into one `test()` per row.
+- Asynchronous sources should be loaded in `test.beforeAll()` and executed through a single test that loops over rows with `test.step()`.
+- The output shape should be normalized so the same test logic can run against different data sources without duplicating specs.
+- External infrastructure should be guarded with `test.skip(...)` so the suite remains safe on machines without those services.
+
+This note is stored in [Learnings/2026-08-05-ddt-sync-vs-async-data-sources.md](Learnings/2026-08-05-ddt-sync-vs-async-data-sources.md) and is intended as a quick reference when designing reusable data-driven Playwright tests.
 
 ## Prerequisites
 
